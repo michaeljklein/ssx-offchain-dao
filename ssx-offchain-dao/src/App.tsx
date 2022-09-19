@@ -4,6 +4,10 @@ import { SSX } from '@spruceid/ssx';
 import './App.css';
 import getSSXConfig from './ssx.config';
 
+import { issueCredential,
+  keyToDID,
+} from '@spruceid/didkit-wasm';
+
 function AccountInfo({ address, delegator }: { address: string, delegator?: string }) {
   return (
     <div>
@@ -22,6 +26,32 @@ function AccountInfo({ address, delegator }: { address: string, delegator?: stri
     </div>
   );
 };
+
+function CreateProposal() {
+  //@ts-ignore
+  const key = (window as any).ssx.session.sessionKey;
+  console.log('key: ' + key);
+
+  const did = keyToDID('key', key);
+  const credential = {
+    '@context': [
+      "https://www.w3.org/2018/credentials/v1"
+    ],
+    id: "some-proposal-id",
+    issuanceDate: Date.now(),
+    issuer: did,
+    type: [ 'VerifiableCredential' ],
+    credentialSubject: {
+      id: did
+    }
+  };
+
+  const proof_options = {
+
+  };
+
+  const vc = issueCredential(JSON.stringify(credential), JSON.stringify(proof_options), key);
+}
 
 function App() {
 
@@ -72,6 +102,11 @@ function App() {
             </button>
           </div>
       }
+
+    <button onClick={CreateProposal}>
+      Create Proposal
+    </button>
+
     </div>
   );
 }
