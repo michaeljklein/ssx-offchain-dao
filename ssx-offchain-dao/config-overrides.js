@@ -15,5 +15,15 @@ module.exports = function override(config, env) {
       Buffer: ['buffer', 'Buffer'],
     }),
   );
+
+  config.module.rules.push(
+      {
+        test: /\.wasm$/,
+        type: 'webassembly/async',
+      }
+  );
+
+  config.experiments = { asyncWebAssembly: true };
+
   return config;
 }
