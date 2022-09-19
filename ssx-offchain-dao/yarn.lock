@@ -2047,10 +2047,10 @@
   "resolved" "https://npm.pkg.github.com/download/@spruceid/ssx-wasm/0.0.0-alpha.9/6ae0f0fd013dd265a27caf6c72d10c8e2b182d6e"
   "version" "0.0.0-alpha.9"
 
-"@spruceid/ssx@^0.0.17", "@spruceid/ssx@latest":
-  "integrity" "sha512-j3tBwQtsqy6WELovBpijSLOjaOGoDDbeE56gsiGLNJro9K4EEoLyixL2oo7qhrJjmnAM79np2NVUgne3xIdIQg=="
-  "resolved" "https://npm.pkg.github.com/download/@spruceid/ssx/0.0.17/cc13939cb97e8cbeb78ddce30da2bb753e37ef13"
-  "version" "0.0.17"
+"@spruceid/ssx@^0.0.18":
+  version "0.0.18"
+  resolved "https://npm.pkg.github.com/download/@spruceid/ssx/0.0.18/2a42dbe3671ae2c33897fc42287d5894e92260ad#2a42dbe3671ae2c33897fc42287d5894e92260ad"
+  integrity sha512-rtwu8kPvp+i/aa7kR8qlqua8gDfhszyhsQvAltEfgxLxJouFrwSufAwF4plASlVJo2NNkPo8IMjiOO41Y2yeGA==
   dependencies:
     "@metamask/detect-provider" "^1.2.0"
     "@spruceid/siwe" "^2.1.6"
